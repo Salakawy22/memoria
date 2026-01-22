@@ -20,6 +20,58 @@ ApplicationWindow {
     property int uiHeight: 600
     property var gridSettings: ({})         // Grid and UI settings from daemon
 
+    function cycleTab(direction) {
+        // States: 0=list, 1=gallery, 2=favorites (list + favoritesOnly)
+        var state = 0
+        if (viewMode === "gallery") {
+            state = 1
+        } else if (viewMode === "list" && favoritesOnly) {
+            state = 2
+        }
+
+        var next = (state + (direction > 0 ? 1 : -1) + 3) % 3
+
+        if (next === 0) {
+            // List (all)
+            viewMode = "list"
+            favoritesOnly = false
+            clearSelection()
+            ipcClient.list(100, false)
+            contentList.forceActiveFocus()
+        } else if (next === 1) {
+            // Gallery
+            viewMode = "gallery"
+            clearSelection()
+            ipcClient.gallery(200)
+            contentGrid.forceActiveFocus()
+        } else {
+            // Favorites (list filtered)
+            viewMode = "list"
+            favoritesOnly = true
+            clearSelection()
+            ipcClient.list(200, true)
+            contentList.forceActiveFocus()
+        }
+    }
+
+    function galleryCanMoveLeft() {
+        if (viewMode !== "gallery") return false
+        var idx = contentGrid.currentIndex
+        if (idx <= 0) return false
+        var cols = gridSettings.grid ? gridSettings.grid.columns : 3
+        return (idx % cols) !== 0
+    }
+
+    function galleryCanMoveRight() {
+        if (viewMode !== "gallery") return false
+        var idx = contentGrid.currentIndex
+        if (idx < 0) return false
+        var cols = gridSettings.grid ? gridSettings.grid.columns : 3
+        var atRightEdge = (idx % cols) === (cols - 1)
+        var atLastItem = idx >= (galleryModel.count - 1)
+        return !(atRightEdge || atLastItem)
+    }
+
     function toggleSelection(clipId) {
         var newSelected = Object.assign({}, selectedIds)
         if (newSelected[clipId]) {
@@ -352,6 +404,24 @@ ApplicationWindow {
             searchField.forceActiveFocus()
             searchField.selectAll()
         }
+    }
+
+    // Left/Right to switch tabs. In gallery, allow navigation with Left/Right;
+    // only switch tabs when at the edge (no further move possible).
+    Shortcut {
+        sequence: "Left"
+        enabled: !searchField.activeFocus && (
+                     viewMode === "list" || (viewMode === "gallery" && !galleryCanMoveLeft())
+                 )
+        onActivated: cycleTab(-1)
+    }
+
+    Shortcut {
+        sequence: "Right"
+        enabled: !searchField.activeFocus && (
+                     viewMode === "list" || (viewMode === "gallery" && !galleryCanMoveRight())
+                 )
+        onActivated: cycleTab(1)
     }
 
     Shortcut {
