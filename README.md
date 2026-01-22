@@ -1,13 +1,9 @@
 # Memoria
 
 ## The (objectively) better clipboard manager.
-## Images
+## Demo
 
-<p align="center">
-  <img src="images/list.png" width="32%" alt="List Mode" />
-  <img src="images/gallery.png" width="32%" alt="Gallery Mode" />
-  <img src="images/image.png" width="32%" alt="Search Clipboard" />
-</p>
+<video src='./images/demo.mp4' ></video>
 
 ### Features:
 - Clipboard cleanup
