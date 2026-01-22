@@ -1,7 +1,7 @@
-pkgbase = memos
+pkgbase = memoria
 	pkgver = 1.0.0
 	pkgrel = 1
-	url = https://github.com/Bumblebee-3/memos
+	url = https://github.com/Bumblebee-3/memoria
 	arch = x86_64
 	license = MIT
 	makedepends = cargo
@@ -10,17 +10,17 @@ pkgbase = memos
 	makedepends = qt6-base
 	makedepends = qt6-declarative
 	makedepends = sqlite
-	source = memos::git+file:///home/bumblebee/Desktop/memos/memos
+	source = memoria::git+file:///home/bumblebee/Desktop/memoria/memoria
 	sha256sums = SKIP
 
-pkgname = memos-daemon
-	pkgdesc = Memos daemon (systemd user service)
+pkgname = memoria-daemon
+	pkgdesc = memoria daemon (systemd user service)
 	depends = gcc-libs
 	depends = sqlite
 
-pkgname = memos-ui
-	pkgdesc = Memos Qt6 UI
+pkgname = memoria-ui
+	pkgdesc = memoria Qt6 UI
 	depends = gcc-libs
 	depends = qt6-base
 	depends = qt6-declarative
-	depends = memos-daemon
+	depends = memoria-daemon
