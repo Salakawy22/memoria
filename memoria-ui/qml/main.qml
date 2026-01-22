@@ -148,6 +148,8 @@ ApplicationWindow {
 
             if (listModel.count > 0) {
                 contentList.currentIndex = 0
+                // Ensure keyboard navigation works immediately
+                contentList.forceActiveFocus()
             }
         }
 
@@ -172,6 +174,8 @@ ApplicationWindow {
 
             if (galleryModel.count > 0) {
                 contentGrid.currentIndex = 0
+                // Ensure keyboard navigation works immediately
+                contentGrid.forceActiveFocus()
             }
         }
 
@@ -660,7 +664,8 @@ ApplicationWindow {
 
             ListView {
                 id: contentList
-                focus: false
+                // Give initial focus when in list mode so arrow keys work immediately
+                focus: viewMode === "list"
                 clip: true
                 spacing: 1
                 model: ListModel { id: listModel }
@@ -765,7 +770,8 @@ ApplicationWindow {
 
             GridView {
                 id: contentGrid
-                focus: false
+                // Give focus when in gallery mode for immediate arrow key navigation
+                focus: viewMode === "gallery"
                 clip: true
                 cellWidth: gridSettings.grid ? (contentGrid.width / gridSettings.grid.columns) : 180
                 cellHeight: gridSettings.grid ? gridSettings.grid.thumb_size : 180
