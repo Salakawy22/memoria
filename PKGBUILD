@@ -15,6 +15,7 @@ makedepends=(
   qt6-base
   qt6-declarative
   sqlite
+  git
 )
 
 source=("memoria::git+file://${PWD}")

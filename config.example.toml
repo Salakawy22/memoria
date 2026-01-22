@@ -3,8 +3,7 @@
 # Location expected by the daemon:
 #   ~/.config/memoria/config.toml
 #
-# Note: most fields are REQUIRED. If a field is missing, the daemon will fail
-# to start with “failed to parse config TOML”.
+# Note: most fields are REQUIRED. If a field is missing, the daemon will fail to start
 
 [retention]
 # Delete items older than this many days.
@@ -21,10 +20,10 @@ height = 640
 # UI placement hint. Currently treated as a string by the daemon/config layer.
 # (Interpretation is up to the UI.)
 # Suggested values: "top-right", "top-left", "bottom-right", "bottom-left"
-anchor = "top-right"
+# anchor = "top-right"
 
 # Window opacity, 0.0 - 1.0
-opacity = 0.92
+# opacity = 0.92
 
 # Background blur amount (float). Interpretation depends on UI/platform.
 blur = 12.0

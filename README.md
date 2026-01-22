@@ -58,6 +58,7 @@ Memoria/
 
 # Installation:
 
+## Manual Installation:
 1. Download
 ```
 git clone https://github.com/Bumblebee-3/memoria.git
@@ -72,10 +73,21 @@ and then
 systemctl --user daemon-reload
 systemctl --user enable --now memoria-daemon
 ```
-3. Config
-copy `config.example.toml` to `.config/memoria/config.toml`.
 
-3. Test
+## Using package managers (yay/paru)
+```
+paru -S memoria-daemon
+```
+or
+```
+paru -S memoria-ui
+```
+
+
+3. Config
+copy `config.example.toml` to `~/.config/memoria/config.toml`.
+
+4. Test
 ```
 memoria-ui
 ```
