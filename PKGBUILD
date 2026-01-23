@@ -2,7 +2,7 @@
 
 pkgbase=memoria
 pkgname=(memoria-daemon memoria-ui)
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 arch=(x86_64)
 url="https://github.com/Bumblebee-3/memoria"
@@ -41,6 +41,7 @@ package_memoria-daemon() {
   depends=(
     gcc-libs
     sqlite
+    wl-paste
   )
 
 
@@ -52,7 +53,6 @@ package_memoria-daemon() {
   install -Dm644 memoria-daemon/memoria-daemon.service \
     "$pkgdir/usr/lib/systemd/user/memoria-daemon.service"
 
-
 }
 
 package_memoria-ui() {
@@ -62,6 +62,7 @@ package_memoria-ui() {
     qt6-base
     qt6-declarative
     memoria-daemon
+    wl-paste
   )
 
   cd "$srcdir/memoria/memoria-ui"
