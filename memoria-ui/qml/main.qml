@@ -1,3 +1,4 @@
+
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -8,7 +9,7 @@ ApplicationWindow {
     width: 800
     height: 600
     title: "memoria"
-    color: "#000000"
+    color: "#1e1e1e"
 
 
     property string viewMode: "list"        // list | gallery
@@ -283,13 +284,13 @@ ApplicationWindow {
             }
         }
     }
-
     Dialog {
     id: deleteConfirmDialog
     modal: true
     focus: true
     width: 360
     height: 190
+    
 
     anchors.centerIn: Overlay.overlay
 
@@ -539,6 +540,15 @@ ApplicationWindow {
         }
     }
 
+    Shortcut {
+        sequence: "Ctrl+Delete"
+        enabled: !searchField.activeFocus
+        onActivated: {
+            deleteConfirmDialog.open()
+        }
+    }
+
+
     // 's' key: star/unstar selected or current item
     Shortcut {
         sequence: "s"
@@ -607,7 +617,7 @@ ApplicationWindow {
                 Button {
                     id: listBtn
                     text: "List"
-                    property bool active: viewMode === "list"
+                    property bool active: viewMode === "list" && !favoritesOnly
 
                     padding: 0
                     implicitHeight: 26
@@ -683,7 +693,7 @@ ApplicationWindow {
                 Button {
                     id: favBtn
                     text: "⭐"
-                    property bool active: favoritesOnly
+                    property bool active: favoritesOnly && viewMode !="gallery"
 
                     padding: 0
                     implicitHeight: 26
