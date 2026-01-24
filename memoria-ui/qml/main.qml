@@ -290,6 +290,11 @@ ApplicationWindow {
     focus: true
     width: 360
     height: 190
+    Shortcut {
+        sequence: "Return"
+        enabled: deleteConfirmDialog.visible
+        onActivated: deleteConfirmDialog.accept()
+    }
     
 
     anchors.centerIn: Overlay.overlay

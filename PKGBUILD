@@ -3,7 +3,7 @@
 pkgbase=memoria
 pkgname=(memoria-daemon memoria-ui)
 pkgver=1.1.0
-pkgrel=1
+pkgrel=5
 arch=(x86_64)
 url="https://github.com/Bumblebee-3/memoria"
 license=(MIT)
